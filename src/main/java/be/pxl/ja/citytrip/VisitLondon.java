@@ -1,7 +1,9 @@
 package be.pxl.ja.citytrip;
 
-import be.pxl.ja.robbery.Knapsack;
-import be.pxl.ja.robbery.KnapsackUtil;
+import be.pxl.ja.knapsack.Item;
+import be.pxl.ja.knapsack.Knapsack;
+import be.pxl.ja.knapsack.KnapsackUtil;
+
 
 public class VisitLondon {
     public static void main(String[] args) {
@@ -17,7 +19,7 @@ public class VisitLondon {
         KnapsackUtil.fill(knapsack, attractions);
 
         System.out.println("\nList of attractions:");
-        for (Attraction attraction : knapsack.getItems()) {
+        for (Item attraction : knapsack.getItems()) {
             System.out.println(attraction);
         }
     }

@@ -1,11 +1,11 @@
-package be.pxl.ja.robbery;
+package be.pxl.ja.knapsack;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Knapsack {
     private double maximumCapacity;
-    private List<Product> items = new ArrayList<Product>();
+    private List<Item> items = new ArrayList<Item>();
 
     public Knapsack(double maximumCapacity) {
         this.maximumCapacity = maximumCapacity;
@@ -13,21 +13,22 @@ public class Knapsack {
 
     public double getCurrentWeight() {
         double sum = 0;
-        for (Product item : getItems()) {
+        for (Item item : getItems()) {
             sum += item.getWeight();
         }
         return sum;
     }
 
-    public void add(Product product) throws KnapsackFullException {
-        if (getCurrentWeight() + product.getWeight() > this.maximumCapacity) {
+    public void add(Item item) throws KnapsackFullException {
+        if (getCurrentWeight() + item.getWeight() > this.maximumCapacity) {
             throw new KnapsackFullException("item doesn't fit into the knapsack");
         } else {
-            getItems().add(product);
+            getItems().add(item);
         }
     }
 
-    public List<Product> getItems() {
+
+    public List<Item> getItems() {
         return items;
     }
 }

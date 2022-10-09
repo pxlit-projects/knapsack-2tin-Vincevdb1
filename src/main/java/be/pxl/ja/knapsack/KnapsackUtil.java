@@ -1,13 +1,12 @@
-package be.pxl.ja.robbery;
+package be.pxl.ja.knapsack;
 
 import java.util.Collections;
-import java.util.List;
 
 public class KnapsackUtil {
-    public static void fill(Knapsack knapsack, Shop shop) {
-        Collections.sort(shop.getItems());
+    public static void fill(Knapsack knapsack, Inventory inventory) {
+        Collections.sort(inventory.getItems());
 
-        for (Product product : shop.getItems()) {
+        for (Item product : inventory.getItems()) {
             try {
                 knapsack.add(product);
             } catch (KnapsackFullException e) {
