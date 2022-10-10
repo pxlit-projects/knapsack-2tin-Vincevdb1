@@ -1,7 +1,8 @@
-package be.pxl.ja.robbery;
+package be.pxl.ja.knapsack;
 
 import be.pxl.ja.knapsack.Knapsack;
 import be.pxl.ja.knapsack.KnapsackFullException;
+import be.pxl.ja.robbery.Product;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
