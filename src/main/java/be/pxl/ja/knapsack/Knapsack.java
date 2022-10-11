@@ -2,10 +2,9 @@ package be.pxl.ja.knapsack;
 
 import java.util.ArrayList;
 import java.util.List;
-
-public class Knapsack {
+public class Knapsack<I extends Item> {
     private double maximumCapacity;
-    private List<Item> items = new ArrayList<Item>();
+    private List<I> items = new ArrayList<I>();
 
     public Knapsack(double maximumCapacity) {
         this.maximumCapacity = maximumCapacity;
@@ -13,22 +12,20 @@ public class Knapsack {
 
     public double getCurrentWeight() {
         double sum = 0;
-        for (Item item : getItems()) {
+        for (I item : getItems()) {
             sum += item.getWeight();
         }
         return sum;
     }
 
-    public void add(Item item) throws KnapsackFullException {
+    public void add(I item) throws KnapsackFullException {
         if (getCurrentWeight() + item.getWeight() > this.maximumCapacity) {
             throw new KnapsackFullException("item doesn't fit into the knapsack");
         } else {
             getItems().add(item);
         }
     }
-
-
-    public List<Item> getItems() {
+    public List<I> getItems() {
         return items;
     }
 }

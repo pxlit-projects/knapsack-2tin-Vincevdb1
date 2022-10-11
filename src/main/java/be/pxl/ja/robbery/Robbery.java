@@ -6,7 +6,7 @@ import be.pxl.ja.knapsack.KnapsackUtil;
 
 public class Robbery {
     public static void main(String[] args) {
-        Knapsack knapsack = new Knapsack(35);
+        Knapsack<Product> knapsack = new Knapsack(35);
 
         Shop shop = new Shop();
         shop.add(new Product("stereo", 30, 3000));

@@ -6,15 +6,15 @@ import be.pxl.ja.knapsack.Item;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LondonAttractions extends Inventory {
+public class LondonAttractions extends Inventory<Attraction> {
 
-    List<Item> items = new ArrayList<>();
+    List<Attraction> items = new ArrayList<>();
 
     public void add(Attraction item) {
         items.add(item);
     }
 
-    public List<Item> getItems() {
+    public List<Attraction> getItems() {
         return items;
     }
 }
